@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { Fragment, useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
+const App = (_) => {
+  const [users, setUsers] = useState([]);
+  const [userNumber, setUserNumber] = useState(6);
+  useEffect(() => {
+    axios
+      .get(`https://randomuser.me/api/?results=${userNumber}`)
+      .then(({ data }) => {
+        setUsers(data.results);
+        console.log(users);
+      });
+  }, []);
+  const Card = () => {
+    return (
+      <div className="wrapper flex bg-red-500">
+        {users.map((user) => (
+          <div className="card" key={user.login.md5}>
+            <img src={user.picture.large} alt="profile pic" />
+            <h3>
+              Name:
+              {user.name.title} {user.name.first} {user.name.last}
+            </h3>
+            <h3>Gender: {user.gender}</h3>
+            <h3>Age: {user.dob.age}</h3>
+            <h3>DOB: {user.dob.date.slice(0, 10)}</h3>
+            <h3>
+              Address: {user.location.city} ,{user.location.country}
+            </h3>
+            <h3>Email: {user.email}</h3>
+            <h3>Phone: {user.phone}</h3>
+          </div>
+        ))}
+      </div>
+    );
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>Fetching Data</h1>
+      <Card />
+    </Fragment>
   );
-}
-
+};
 export default App;
