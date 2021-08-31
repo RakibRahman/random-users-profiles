@@ -4,7 +4,7 @@ import "./App.css";
 import Card from "./Card";
 const App = (_) => {
   const [users, setUsers] = useState([]);
-  const [userNumber, setUserNumber] = useState(6);
+  const [userNumber, setUserNumber] = useState(1);
 
   useEffect(() => {
     axios
@@ -17,7 +17,7 @@ const App = (_) => {
 
   return (
     <Fragment>
-      <h1>Fetching Data</h1>
+      <h1>Random Users Profiles</h1>
       <Card users={users} />
     </Fragment>
   );

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.iconStyle {
+  @apply w-5 h-5 text-blue-500;
+}
+.contact {
+  @apply flex items-center gap-1;
+}
+.card {
+  @apply w-2/4 p-2 bg-yellow-200 rounded-2xl;
+}
+.profilePic {
+  @apply border-4 border-red-400 rounded-full cursor-pointer hover:border-gray-300;
+}
+.info {
+  @apply flex flex-col items-center justify-center gap-2 mb-4 text-center;
+}
