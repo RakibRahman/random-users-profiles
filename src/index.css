@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  @apply bg-gradient-to-r from-green-400 to-blue-500 lg:h-screen;
+}
 .iconStyle {
   @apply w-5 h-5 text-blue-500;
 }
