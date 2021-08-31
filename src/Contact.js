@@ -6,7 +6,7 @@ import {
 
 const Contact = ({ mail, phone, city, country }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-1">
+    <div className="flex flex-col items-start justify-center gap-1">
       <p className="contact">
         <PhoneIcon className="iconStyle" /> {phone}
       </p>

@@ -1,5 +1,6 @@
 import Person from "./Person";
 import Contact from "./Contact";
+
 const Card = ({ users }) => {
   const jobs = [
     "FrontEnd Developer",
@@ -28,7 +29,10 @@ const Card = ({ users }) => {
   return (
     <div className="border-4 border-red-500 rounded-lg main__wrapper">
       {users.map((user) => (
-        <div className="card" key={user.login.md5}>
+        <div
+          className="justify-between gap-2 lg:flex card"
+          key={user.login.md5}
+        >
           <Person
             firstName={user.name.first}
             lastName={user.name.last}
@@ -38,7 +42,7 @@ const Card = ({ users }) => {
             gender={user.gender}
             job={<JobName />}
           />
-          <div className="w-full h-1 my-2 bg-white border-2"></div>
+          <div className="w-full h-2 my-2 bg-white lg:my-0 lg:h-full lg:w-2 "></div>
           <Contact
             mail={user.email}
             phone={user.phone}

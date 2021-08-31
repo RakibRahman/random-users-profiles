@@ -26,8 +26,8 @@ const App = (_) => {
     setUserNumber(1);
   };
   return (
-    <main>
-      <h1 className="text-4xl font-medium text-center">
+    <main className="flex flex-col items-center content-center">
+      <h1 className="mt-10 text-4xl font-medium text-center ">
         Random Users Profiles
       </h1>
       <ActionButtons
