@@ -6,7 +6,7 @@
   @apply w-5 h-5 text-blue-500;
 }
 .main__wrapper {
-  @apply grid items-center w-auto grid-cols-1 gap-2 p-5 mx-auto lg:w-900 justify-items-center md:grid-cols-2 lg:grid-cols-3 md:gap-3;
+  @apply grid content-center w-auto grid-cols-1 gap-2 p-5 mx-auto lg:w-900 justify-items-center md:grid-cols-2 lg:grid-cols-3 md:gap-3;
 }
 .contact {
   @apply flex items-center gap-1;
@@ -19,4 +19,7 @@
 }
 .info {
   @apply flex flex-col items-center justify-center gap-2 mb-4 text-center;
+}
+.action-btn {
+  @apply flex justify-center px-2 py-1 text-white rounded-md hover:opacity-70;
 }
