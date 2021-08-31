@@ -1,19 +1,17 @@
-import { UserAddIcon, RefreshIcon } from "@heroicons/react/solid";
+import { UserAddIcon, RefreshIcon, ReplyIcon } from "@heroicons/react/solid";
 
-const ActionButtons = ({ refresh, newUser }) => {
+const ActionButtons = ({ refresh, newUser, reset }) => {
   return (
-    <div className="flex gap-2">
-      <button
-        onClick={refresh}
-        className="px-2 py-1 text-white bg-red-500 rounded-md"
-      >
+    <div className="flex flex-col w-10 gap-2">
+      <button onClick={newUser} className="bg-green-500 action-btn">
+        {<UserAddIcon className="w-5 h-5" />}
+      </button>
+      <button onClick={refresh} className="bg-red-500 action-btn">
         {<RefreshIcon className="w-5 h-5" />}
       </button>
-      <button
-        onClick={newUser}
-        className="px-2 py-1 text-white bg-green-500 rounded-md"
-      >
-        {<UserAddIcon className="w-5 h-5" />}
+
+      <button onClick={reset} className="bg-blue-500 action-btn">
+        {<ReplyIcon className="w-5 h-5" />}
       </button>
     </div>
   );

@@ -22,13 +22,19 @@ const App = (_) => {
   const refreshUser = () => {
     setRefresh(new Date());
   };
-
+  const resetUser = () => {
+    setUserNumber(1);
+  };
   return (
     <main>
       <h1 className="text-4xl font-medium text-center">
         Random Users Profiles
       </h1>
-      <ActionButtons refresh={refreshUser} newUser={addNewUser} />
+      <ActionButtons
+        refresh={refreshUser}
+        newUser={addNewUser}
+        reset={resetUser}
+      />
       <Card users={users} />
     </main>
   );
