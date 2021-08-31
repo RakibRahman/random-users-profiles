@@ -5,14 +5,17 @@
 .iconStyle {
   @apply w-5 h-5 text-blue-500;
 }
+.main__wrapper {
+  @apply grid items-center w-auto grid-cols-1 gap-2 p-5 mx-auto lg:w-900 justify-items-center md:grid-cols-2 lg:grid-cols-3 md:gap-3;
+}
 .contact {
   @apply flex items-center gap-1;
 }
 .card {
-  @apply w-2/4 p-2 bg-yellow-200 rounded-2xl;
+  @apply p-2 bg-yellow-300 w-300 rounded-2xl;
 }
 .profilePic {
-  @apply border-4 border-red-400 rounded-full cursor-pointer hover:border-gray-300;
+  @apply mt-2 border-4 border-red-400 rounded-full cursor-pointer hover:border-gray-300;
 }
 .info {
   @apply flex flex-col items-center justify-center gap-2 mb-4 text-center;

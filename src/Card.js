@@ -1,9 +1,5 @@
-import {
-  PhoneIcon,
-  LocationMarkerIcon,
-  MailIcon,
-} from "@heroicons/react/solid";
-
+import Person from "./Person";
+import Contact from "./Contact";
 const Card = ({ users }) => {
   const jobs = [
     "FrontEnd Developer",
@@ -29,43 +25,8 @@ const Card = ({ users }) => {
     return <p className="text-lg font-bold">{jobs[random]}</p>;
   };
 
-  const Person = ({ firstName, lastName, dob, pic, age, gender }) => {
-    return (
-      <div className="info">
-        <img className="profilePic" src={pic} alt="profile pic" />
-
-        <div className="flex flex-col">
-          <p className="text-4xl font-black">
-            {firstName} {lastName}
-          </p>
-          <JobName />
-
-          <p>
-            {firstName} is {age} years old. {gender === "male" ? "He " : "She "}
-            was born on {dob.slice(0, 10)}.
-          </p>
-        </div>
-      </div>
-    );
-  };
-  const Contact = ({ mail, phone, city, country }) => {
-    return (
-      <div className="flex flex-col items-center justify-center gap-1">
-        <p className="contact">
-          <PhoneIcon className="iconStyle" /> {phone}
-        </p>
-        <p className="contact">
-          <LocationMarkerIcon className="iconStyle" />
-          {city},{country}
-        </p>
-        <p className="contact">
-          <MailIcon className="iconStyle" /> {mail}
-        </p>
-      </div>
-    );
-  };
   return (
-    <div className="flex flex-wrap w-11/12 gap-3 border-2">
+    <div className="border-4 border-red-500 rounded-lg main__wrapper">
       {users.map((user) => (
         <div className="card" key={user.login.md5}>
           <Person
@@ -75,6 +36,7 @@ const Card = ({ users }) => {
             dob={user.dob.date}
             age={user.dob.age}
             gender={user.gender}
+            job={<JobName />}
           />
           <div className="w-full h-1 my-2 bg-white border-2"></div>
           <Contact
