@@ -15,6 +15,7 @@ const App = (_) => {
       .then(({ data }) => {
         setUsers(data.results);
       });
+    document.title = "Random Users Profiles";
   }, [userNumber, refresh]);
   const addNewUser = () => {
     setUserNumber(userNumber + 1);
@@ -26,10 +27,8 @@ const App = (_) => {
     setUserNumber(1);
   };
   return (
-    <main className="flex flex-col items-center content-center h-full">
-      <h1 className="mt-10 mb-4 font-mono text-5xl font-medium text-center text-white">
-        Random Users Profiles
-      </h1>
+    <main className="main">
+      <h1 className="title">Random Users Profiles</h1>
       <ActionButtons
         refresh={refreshUser}
         newUser={addNewUser}

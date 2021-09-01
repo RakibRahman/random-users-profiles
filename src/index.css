@@ -4,6 +4,9 @@
 body {
   @apply bg-gradient-to-r from-green-400 to-blue-500 lg:h-screen;
 }
+.main {
+  @apply flex flex-col items-center content-center h-full;
+}
 .iconStyle {
   @apply w-5 h-5 text-blue-500;
 }
@@ -24,4 +27,7 @@ body {
 }
 .action-btn {
   @apply flex justify-center px-2 py-1 text-white rounded-md hover:opacity-70;
+}
+.title {
+  @apply mt-10 mb-4 font-mono text-5xl font-medium text-center text-white;
 }
